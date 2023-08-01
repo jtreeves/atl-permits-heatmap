@@ -1,7 +1,17 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { ConfigEnv, UserConfig, defineConfig, loadEnv } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import { join } from 'path'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+    const env: Record<string, string> = loadEnv(mode, process.cwd())
+
+    return {
+        plugins: [react()],
+        define: {
+            __APP_ENV__: JSON.stringify(env.APP_ENV)
+        },
+        resolve: {
+            alias: { '@/': join(__dirname, 'src/') }
+        }
+    }
 })
