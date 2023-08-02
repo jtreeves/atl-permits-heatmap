@@ -77,8 +77,7 @@ module.exports = {
                 selector: 'function',
                 format: ['camelCase', 'PascalCase'],
                 modifiers: ['exported']
-            },
-            { selector: 'class', format: ['PascalCase'] }
+            }
         ],
         '@typescript-eslint/no-unused-vars': [
             'warn',

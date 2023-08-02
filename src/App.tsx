@@ -6,7 +6,7 @@ function App(): JSX.Element {
     return (
         <div>
             <p>Hello, world! {count}</p>
-            
+
             <button
                 onClick={(): void => {
                     setCount(count + 3)
