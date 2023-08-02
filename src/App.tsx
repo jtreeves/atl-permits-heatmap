@@ -5,14 +5,15 @@ function App(): JSX.Element {
 
     return (
         <div>
-            Hello, world! {count}{' '}
+            <p>Hello, world! {count}</p>
+            
             <button
-                onClick={() => {
-                    setCount(count+3)
+                onClick={(): void => {
+                    setCount(count + 3)
                 }}
             >
                 Increase Count
-            </button>{' '}
+            </button>
         </div>
     )
 }

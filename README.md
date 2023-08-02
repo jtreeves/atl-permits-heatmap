@@ -1,5 +1,9 @@
 # Atlanta Building Permits Heatmap
 
+https://docs.mapbox.com/help/tutorials/make-a-heatmap-with-mapbox-gl-js/
+
+https://gis.atlantaga.gov/buildingpermittracker/?page=Search-All-Permits
+
 _Sentence-long description of what code in this repo creates, not ending in a period_
 
 This is a **Framework** app written in **Language**. This paragraph should give an over description of the implementation. What are the major dependencies used? What is ultimately produced? It should elaborate on the previous log-line, clarifying the inputs and outputs, with key words bolded.
@@ -58,10 +62,10 @@ While the CLI scripts allow you to implement linting and formatting without need
 
 1.  Install necessary extensions: ESLint and Prettier
 2.  Adjust settings to ensure that the following properties are all checked:
-    -   ESLint: Enable
+    -   Editor: Format On Save
     -   Prettier: Enable
     -   Prettier: Use Editor Config
-    -   Editor: Format On Save
+    -   ESLint: Enable
     -   Eslint > Code Actions On Save: Mode (select `all` from dropdown)
     -   Eslint: Run (select `onType` from dropdown)
 

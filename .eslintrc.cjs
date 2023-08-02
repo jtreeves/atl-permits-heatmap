@@ -27,7 +27,7 @@ module.exports = {
         'import/resolver': { typescript: {} },
         react: { version: 'detect' }
     },
-    ignorePatterns: ['dist', '*.cjs'],
+    ignorePatterns: ['dist', 'node_modules', '*.cjs'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: 'tsconfig.json',
