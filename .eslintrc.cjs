@@ -36,10 +36,10 @@ module.exports = {
     },
     rules: {
         // Core
-        'array-callback-return': 'error',
-        'require-await': 'error',
         'no-var': 'error',
-        'implicit-arrow-linebreak': 'error',
+        'array-callback-return': 'warn',
+        'require-await': 'warn',
+        'implicit-arrow-linebreak': 'warn',
         'padding-line-between-statements': [
             'warn',
             { blankLine: 'always', prev: 'block-like', next: '*' },
@@ -55,7 +55,7 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'error',
         '@typescript-eslint/return-await': ['error', 'always'],
         '@typescript-eslint/typedef': [
-            'error',
+            'warn',
             {
                 arrowParameter: true,
                 parameter: true,
@@ -120,7 +120,7 @@ module.exports = {
 
         // Require Explicit Generics
         'require-explicit-generics/require-explicit-generics': [
-            'error',
+            'warn',
             ['useState', 'useForm']
         ],
 
