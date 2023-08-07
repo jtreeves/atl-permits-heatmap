@@ -41,6 +41,12 @@
             "@/*": ["src/*"]
         }
     },
-    "include": ["src", "vite.config.ts"],
+    "include": [
+        "src",
+        "tests",
+        "vite.config.ts",
+        "jest.config.ts",
+        "cypress.config.ts"
+    ],
     "references": [{ "path": "./tsconfig.node.json" }]
 }
