@@ -7,7 +7,7 @@ export default defineConfig({
             bundler: 'vite'
         },
         supportFile: false,
-        specPattern: 'tests/e2e/**/*.spec.{ts,tsx}',
+        specPattern: 'tests/e2e/**/*.spec.tsx',
         indexHtmlFile: 'tests/configurations/setupComponent.html'
     }
 })

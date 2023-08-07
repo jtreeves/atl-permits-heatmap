@@ -48,11 +48,12 @@ This repo uses ESLint and Prettier for linting and formatting, respectively.
 While the CLI scripts allow you to implement linting and formatting without needing to adjust your IDE, such adjustments can make for a better development experience. The following steps assume you are using VS Code for your IDE, but comparable steps can probably be found for JetBrains IDEs or any other preferred IDE.
 
 1.  Install necessary extensions: ESLint and Prettier
-2.  Adjust settings to ensure that the following properties are all checked:
+2.  Adjust settings to ensure that the following properties are all checked (or have the correct option selected):
     -   Editor: Format On Save
+    -   ESLint: Enable
     -   Prettier: Enable
     -   Prettier: Use Editor Config
-    -   ESLint: Enable
+    -   Editor: Default Formatter (select `Prettier - Code formatter` from dropdown)
     -   Eslint > Code Actions On Save: Mode (select `all` from dropdown)
     -   Eslint: Run (select `onType` from dropdown)
 
@@ -62,6 +63,35 @@ If you make those changes, any linting or formatting issues will appear as you t
 
 1. Start the app: `npm run dev`
 2. Interact with the app in the browser (previous command should automatically open it): `http://localhost:5173`
+
+## Testing the App
+
+Describe all the different options for testing the repo, both programmatically with a test suite or manually.
+
+### Testing with Jest
+
+1.  Run all unit tests: `npm run test`
+2.  View any errors flagged
+
+### Testing with Cypress
+
+1.  Run all end-to-end tests: `npm run e2e`
+2.  View any errors flagged
+
+### Confirm Builds Pass
+
+Before opening any PR, you should ensure that your code both runs locally (via the above steps) and will not break a build. There are two scripts you may utilize in the CLI to simplify this check.
+
+-   Only check the build: `npm run build`
+    -   If a TypeScript-related error as defined in the `tsconfig.json` is found in the code, then the build will fail and provide you with a message of where in which files to find the error and why it is flagged as an error
+    -   Currently, no specific TypeScript errors are flagged in the configurations; only the general `strict` property is set to true, meaning only serious TypeScript errors should cause a build to fail
+    -   If no errors are found, the build will complete successfully, and an updated `dist` folder should be found at your root
+-   Check the build along with tests and linting, then apply formatting: `npm run check`
+    -   This command checks the unit tests by running `npm run test`, then checks the end-to-end tests by running `npm run e2e`, then checks the build by running `npm run build`, then checks the linting by running `npm run lint`, then enforces the formatting by running `npm run format`
+    -   If any tests fail, then the process with error out with sufficient messaging; this failures should be _dealt with first_, since they indicate a failure at a granular level
+    -   If the tests pass, then it will move out to check the build, and if that fails, then the process will error out with sufficient messaging; _build errors must be resolved_
+    -   If the build succeeds, then it will move on to the linting, and if that fails, then similar messaging will be presented to you; unlike build errors, _linting errors do not need to be resolved for production_
+    -   If the tests, the build, and the linting succeed, then the formatting will be updated, and a final confirmation message of `All checks passed!` will appear in your terminal
 
 ## Deployment
 
