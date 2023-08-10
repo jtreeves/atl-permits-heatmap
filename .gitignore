@@ -1,7 +1,6 @@
 # Builds
 node_modules
 dist
-cypress
 coverage
 
 # Environments

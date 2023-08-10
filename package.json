@@ -9,11 +9,10 @@
     "scripts": {
         "dev": "vite --open",
         "test": "jest --coverage",
-        "e2e": "cypress run --component",
         "build": "tsc && vite build",
         "lint": "eslint --fix",
         "format": "prettier . --write",
-        "check": "npm run test && npm run e2e && npm run build && npm run lint && npm run format && echo '\nAll checks passed!'"
+        "check": "npm run test && npm run build && npm run lint && npm run format && echo '\nAll checks passed!'"
     },
     "dependencies": {
         "@emotion/react": "^11.11.1",
@@ -30,7 +29,6 @@
     "devDependencies": {
         "@babel/preset-env": "^7.22.9",
         "@babel/preset-react": "^7.22.5",
-        "@cypress/react": "^7.0.3",
         "@testing-library/jest-dom": "^5.17.0",
         "@testing-library/react": "^14.0.0",
         "@types/react": "^18.2.14",
@@ -39,7 +37,6 @@
         "@typescript-eslint/parser": "^5.62.0",
         "@vitejs/plugin-react": "^4.0.4",
         "@vitejs/plugin-react-swc": "^3.3.2",
-        "cypress": "^12.17.3",
         "eslint": "^8.45.0",
         "eslint-config-prettier": "^8.8.0",
         "eslint-import-resolver-typescript": "^3.5.5",
