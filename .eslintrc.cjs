@@ -103,12 +103,17 @@ module.exports = {
             {
                 'src/**/!(vite-env).ts': 'CAMEL_CASE',
                 'src/**/!(main|router).tsx': 'PASCAL_CASE'
+            },
+            {
+                ignoreMiddleExtensions: true
             }
         ],
         'check-file/folder-naming-convention': [
             'warn',
             {
-                'src/**/': 'CAMEL_CASE'
+                'src/components/**/': 'PASCAL_CASE',
+                'src/pages/**/': 'PASCAL_CASE',
+                'src/!(components|pages)/**/': 'CAMEL_CASE'
             }
         ],
 
